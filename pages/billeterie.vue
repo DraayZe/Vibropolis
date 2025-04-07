@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<h2>Line-up</h2>
+<h2>Billeterie</h2>
 </template>
 
 <style scoped>

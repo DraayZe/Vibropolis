@@ -1,11 +1,10 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  $END$
+  <div>
+    <h1>Inscription à Vibropolis</h1>
+    <RegisterForm />
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<script setup>
+import RegisterForm from '~/components/RegisterForm.vue'
+</script>

@@ -1,11 +1,10 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  $END$
+  <div>
+    <h1>Connexion à Vibropolis</h1>
+    <LoginForm />
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<script setup>
+import LoginForm from '~/components/LoginForm.vue'
+</script>

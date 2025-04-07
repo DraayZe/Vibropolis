@@ -1,0 +1,26 @@
+services:
+  db:
+    container_name: vibropolis-container
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: lenny
+      MYSQL_DATABASE: vibropolis
+    ports:
+      - "33066:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: vibropolis-phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PASSWORD: lenny
+    ports:
+      - "8282:80"
+    depends_on:
+      - db
+
+volumes:
+  mariadb_data:

@@ -1,3 +1,3 @@
-CREATE USER 'root'@'%' IDENTIFIED BY 'lenny';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
+-- CREATE USER 'vibropolis'@'%' IDENTIFIED BY 'vibropolis';
+-- GRANT ALL PRIVILEGES ON vibropolis.* TO 'vibropolis'@'%';
+-- FLUSH PRIVILEGES;
