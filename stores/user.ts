@@ -2,7 +2,7 @@
 import { defineStore } from 'pinia'
 
 interface User {
-    user: any; // Vous pouvez remplacer 'any' par le type approprié pour l'utilisateur
+    user: any;
     token: string | null;
 }
 
