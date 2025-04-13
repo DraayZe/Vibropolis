@@ -9,7 +9,12 @@ export default {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Bevellier: ['Bevellier', 'sans-serif'],
+        BevellierBlack: ['Bevellier-Black', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

@@ -7,3 +7,4 @@ export default defineEventHandler(async (event) => {
     const utilisateurs = await prisma.utilisateur.findMany()
     return utilisateurs
 })
+
