@@ -25,3 +25,14 @@
             -1px 1px 0 #fff,
             1px 1px 0 #fff;
 }
+
+.outline-white {
+    color: #1E1E1E;
+    text-shadow:
+            -1px -1px 0 #fff,
+            1px -1px 0 #fff,
+            -1px 1px 0 #fff,
+            1px 1px 0 #fff;
+}
+
+

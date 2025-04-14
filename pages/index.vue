@@ -8,6 +8,7 @@ interface Artiste {
   album: string
   description: string | null
   photo: string
+  datePerformance: number
 }
 
 const { data: artistes } = await useFetch<Artiste[]>('/api/artistes')
