@@ -43,9 +43,9 @@ export default defineEventHandler(async (event) => {
         data: {
             nom: String(fields.nom),
             genreMusical: String(fields.genreMusical),
-            album: String(fields.album),
-            description: fields.description ? String(fields.description) : null,
-            photo: `/uploads/${fileName}`
+            description: String(fields.description),
+            photo: `/uploads/${fileName}`,
+            datePerformance: new Date(String(fields.datePerformance))
         }
     })
 
