@@ -60,9 +60,7 @@ const artistesDimanche = computed(() => {
   </div>
   <div class="bg-[#1E1E1E]">
     <div v-if="artistesVendredi && artistesVendredi.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div v-for="artiste in artistesVendredi" :key="artiste.id">
-        <img :src="artiste.photo" alt="Photo de l'artiste" class="w-96 h-full object-cover rounded mb-2" />
-      </div>
+      <ArtisteCard v-for="artiste in artistesVendredi" :key="artiste.nom" :artiste="artiste" />
     </div>
     <p v-else>Aucun artiste pour Vendredi.</p>
   </div>
@@ -78,9 +76,7 @@ const artistesDimanche = computed(() => {
   </div>
   <div class="bg-[#1E1E1E]">
     <div v-if="artistesSamedi && artistesSamedi.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div v-for="artiste in artistesSamedi" :key="artiste.id">
-        <img :src="artiste.photo" alt="Photo de l'artiste" class="w-96 h-full object-cover rounded mb-2" />
-      </div>
+        <ArtisteCard v-for="artiste in artistesSamedi" :key="artiste.nom" :artiste="artiste" />
     </div>
     <p v-else>Aucun artiste pour Samedi.</p>
   </div>
@@ -96,9 +92,7 @@ const artistesDimanche = computed(() => {
   </div>
   <div class="bg-[#1E1E1E]">
     <div v-if="artistesDimanche && artistesDimanche.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div v-for="artiste in artistesDimanche" :key="artiste.id">
-        <img :src="artiste.photo" alt="Photo de l'artiste" class="w-96 h-full object-cover rounded mb-2" />
-      </div>
+      <ArtisteCard v-for="artiste in artistesDimanche" :key="artiste.nom" :artiste="artiste" />
     </div>
     <p v-else>Aucun artiste pour Dimanche.</p>
   </div>
