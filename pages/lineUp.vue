@@ -8,27 +8,23 @@ interface Artiste {
   album: string
   description: string | null
   photo: string
-  datePerformance?: string  // au format ISO, par exemple "2025-06-13T00:00:00.000Z"
+  datePerformance?: string
 }
 
-// Récupère tous les artistes via l'API
 const { data: artistes } = await useFetch<Artiste[]>('/api/artistes')
 
-// Filtre les artistes dont la date de performance correspond à Vendredi 13 juin 2025
 const artistesVendredi = computed(() => {
   return (artistes.value || []).filter(
       a => a.datePerformance && a.datePerformance.startsWith('2025-06-13')
   )
 })
 
-// Filtre pour Samedi 14 juin 2025
 const artistesSamedi = computed(() => {
   return (artistes.value || []).filter(
       a => a.datePerformance && a.datePerformance.startsWith('2025-06-14')
   )
 })
 
-// Filtre pour Dimanche 15 juin 2025
 const artistesDimanche = computed(() => {
   return (artistes.value || []).filter(
       a => a.datePerformance && a.datePerformance.startsWith('2025-06-15')
@@ -37,7 +33,6 @@ const artistesDimanche = computed(() => {
 </script>
 
 <template>
-  <!-- En-tête avec dates globales -->
   <div class="flex flex-col items-center justify-center bg-[#1E1E1E] pb-10">
     <div class="flex">
       <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#120AF1]">13</p>
@@ -49,7 +44,6 @@ const artistesDimanche = computed(() => {
     </div>
   </div>
 
-  <!-- Section Vendredi -->
   <div class="flex justify-center gap-20 bg-[#1E1E1E]">
     <h2 class="text-white font-BevellierBlack" style="font-size: clamp(20px, 10vw, 200px);">
       VENDREDI
@@ -59,13 +53,14 @@ const artistesDimanche = computed(() => {
     </h2>
   </div>
   <div class="bg-[#1E1E1E]">
-    <div v-if="artistesVendredi && artistesVendredi.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div v-if="artistesVendredi && artistesVendredi.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-24 justify-items-center">
       <ArtisteCard v-for="artiste in artistesVendredi" :key="artiste.nom" :artiste="artiste" />
     </div>
     <p v-else>Aucun artiste pour Vendredi.</p>
+    <Bouton />
   </div>
 
-  <!-- Section Samedi -->
+
   <div class="flex justify-center gap-20 bg-[#1E1E1E]">
     <h2 class="text-white font-BevellierBlack" style="font-size: clamp(20px, 10vw, 200px);">
       SAMEDI
@@ -75,13 +70,13 @@ const artistesDimanche = computed(() => {
     </h2>
   </div>
   <div class="bg-[#1E1E1E]">
-    <div v-if="artistesSamedi && artistesSamedi.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div v-if="artistesSamedi && artistesSamedi.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-24 justify-items-center ">
         <ArtisteCard v-for="artiste in artistesSamedi" :key="artiste.nom" :artiste="artiste" />
     </div>
     <p v-else>Aucun artiste pour Samedi.</p>
+    <Bouton />
   </div>
 
-  <!-- Section Dimanche -->
   <div class="flex justify-center gap-20 bg-[#1E1E1E]">
     <h2 class="text-white font-BevellierBlack" style="font-size: clamp(20px, 10vw, 200px);">
       DIMANCHE
@@ -90,14 +85,15 @@ const artistesDimanche = computed(() => {
       15 JUIN
     </h2>
   </div>
-  <div class="bg-[#1E1E1E]">
-    <div v-if="artistesDimanche && artistesDimanche.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="bg-[#1E1E1E] ">
+    <div v-if="artistesDimanche && artistesDimanche.length" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-24 justify-items-center">
       <ArtisteCard v-for="artiste in artistesDimanche" :key="artiste.nom" :artiste="artiste" />
     </div>
     <p v-else>Aucun artiste pour Dimanche.</p>
+    <Bouton />
   </div>
 </template>
 
 <style scoped>
-/* Tes styles personnalisés */
+
 </style>

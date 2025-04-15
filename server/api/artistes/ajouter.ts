@@ -3,8 +3,6 @@ import formidable from 'formidable'
 import { writeFile, readFile } from 'fs/promises'
 import { join } from 'path'
 
-
-
 const prisma = new PrismaClient()
 
 // Désactive le body parser par défaut de Nuxt pour les uploads
@@ -42,7 +40,6 @@ export default defineEventHandler(async (event) => {
     const nouvelArtiste = await prisma.artiste.create({
         data: {
             nom: String(fields.nom),
-            genreMusical: String(fields.genreMusical),
             description: String(fields.description),
             photo: `/uploads/${fileName}`,
             datePerformance: new Date(String(fields.datePerformance))

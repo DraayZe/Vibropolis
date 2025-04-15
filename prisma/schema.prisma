@@ -39,10 +39,9 @@
     model Artiste {
       id               Int      @id @default(autoincrement())
       nom              String
-      genreMusical     String
       albums           Album[]  // Relation: un artiste peut avoir plusieurs albums
       description      String
-      photo            String   // URL ou chemin vers la photo
+      photo            String
       datePerformance  DateTime
     }
 
@@ -52,4 +51,5 @@
       dateSortie DateTime
       artiste    Artiste @relation(fields: [artisteId], references: [id])
       artisteId  Int
+      photo      String?
     }
