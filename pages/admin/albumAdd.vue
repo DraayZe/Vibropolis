@@ -35,11 +35,13 @@ const ajouterAlbum = async () => {
   resetFields()
 }
 
-// Récupérer les artistes existants pour la sélection
 onMounted(async () => {
   const res = await fetch('/api/artistes')
-  artistes.value = await res.json()
+  const data = await res.json()
+
+  artistes.value = data.sort((a, b) => a.nom.localeCompare(b.nom))
 })
+
 </script>
 
 <template>

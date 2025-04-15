@@ -17,6 +17,10 @@
     font-style: normal;
 }
 
+main, body {
+    overflow-x: hidden;
+}
+
 .hover-outline-white:hover {
     color: #1E1E1E;
     text-shadow:
