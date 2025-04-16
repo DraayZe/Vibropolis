@@ -32,8 +32,13 @@ if (artiste.value?.albums) {
 
 <template>
   <div v-if="artiste" class="bg-[#1E1E1E] min-h-screen p-10 text-white">
-    <h1 class="text-3xl font-bold mb-4">{{ artiste.nom }}</h1>
-    <img :src="artiste.photo" alt="Artiste" class="w-96 rounded mb-6">
+    <div class="flex items-start gap-8">
+      <img :src="artiste.photo" alt="Artiste" class="w-1/4 rounded mb-6 object-cover"/>
+      <div class="flex flex-col justify-center items-center flex-1">
+        <h2 class="text-4xl font-Tanker mb-4">{{ artiste.nom }}</h2>
+        <p>{{ artiste.description }}</p>
+      </div>
+    </div>
 
     <div v-if="artiste.albums && artiste.albums.length">
       <h2 class="text-2xl font-semibold mb-4">Albums</h2>

@@ -19,7 +19,11 @@ export default {
   			BevellierBlack: [
   				'Bevellier-Black',
   				'sans-serif'
-  			]
+  			],
+			Tanker: [
+				'Tanker',
+				'sans-serif'
+			]
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
