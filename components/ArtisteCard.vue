@@ -5,6 +5,7 @@ defineProps<{
     nom: string
     genreMusical: string
     photo: string
+    couleur: string
   }
 }>()
 </script>

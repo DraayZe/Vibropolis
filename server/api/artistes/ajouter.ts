@@ -42,7 +42,9 @@ export default defineEventHandler(async (event) => {
             nom: String(fields.nom),
             description: String(fields.description),
             photo: `/uploads/${fileName}`,
-            datePerformance: new Date(String(fields.datePerformance))
+            datePerformance: new Date(String(fields.datePerformance)),
+            couleur: String(fields.couleur),
+
         }
     })
 

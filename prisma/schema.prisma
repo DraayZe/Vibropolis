@@ -43,6 +43,7 @@
       description      String
       photo            String
       datePerformance  DateTime
+      couleur          String?
     }
 
     model Album {

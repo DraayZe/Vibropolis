@@ -20,6 +20,7 @@ interface Artiste {
   photo: string
   datePerformance: string
   albums?: Album[]
+  couleur: string
 }
 
 const { data: artiste } = await useFetch<Artiste>(`/api/artistes/${route.params.nom}`)
@@ -32,24 +33,18 @@ if (artiste.value?.albums) {
 
 <template>
   <div v-if="artiste" class="bg-[#1E1E1E] min-h-screen p-10 text-white">
-    <div class="flex items-start gap-8">
-      <img :src="artiste.photo" alt="Artiste" class="w-1/4 rounded mb-6 object-cover"/>
+    <div class="flex items-start ">
+      <img :src="artiste.photo" alt="Artiste" class="w-1/4 rounded mb-6 object-cover z-10 outline-card "/>
       <div class="flex flex-col justify-center items-center flex-1">
-        <h2 class="text-4xl font-Tanker mb-4">{{ artiste.nom }}</h2>
+        <h2 class="text-8xl font-Tanker mb-4" :style="{ color: artiste.couleur || '#FFFFFF' }" >{{ artiste.nom }}</h2>
         <p>{{ artiste.description }}</p>
       </div>
+
     </div>
-
     <div v-if="artiste.albums && artiste.albums.length">
-      <h2 class="text-2xl font-semibold mb-4">Albums</h2>
-
-      <Carousel class="w-full " :opts="{ align: 'start' }">
+      <Carousel class="w-full" :opts="{ align: 'start' }">
         <CarouselContent class="-ml-2">
-          <CarouselItem
-              v-for="album in artiste.albums"
-              :key="album.id"
-              class="pl-2 md:basis-1/2 lg:basis-1/3"
-          >
+          <CarouselItem v-for="album in artiste.albums" :key="album.id" class="pl-2 md:basis-1/2 lg:basis-1/3">
             <AlbumCard :album="album" />
           </CarouselItem>
         </CarouselContent>
@@ -57,12 +52,14 @@ if (artiste.value?.albums) {
         <CarouselNext class="mr-10"/>
       </Carousel>
     </div>
+
   </div>
 
   <div v-else class="text-white p-10">
     <p>Chargement de l'artiste...</p>
   </div>
 </template>
+
 
 
 

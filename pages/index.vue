@@ -4,11 +4,18 @@ import { computed } from 'vue'
 interface Artiste {
   id: number
   nom: string
-  genreMusical: string
-  album: string
-  description: string | null
+  description: string
   photo: string
-  datePerformance: number
+  datePerformance: string
+  albums?: Album[]
+  couleur: string
+}
+
+interface Album {
+  id: number
+  titre: string
+  dateSortie: string
+  photo: string
 }
 
 const { data: artistes } = await useFetch<Artiste[]>('/api/artistes')
@@ -60,9 +67,7 @@ const artistesFiltres = computed(() => {
   </div>
 
   <div v-if="artistesFiltres && artistesFiltres.length" class="flex justify-evenly my-12">
-    <div v-for="artiste in artistesFiltres" :key="artiste.id">
-      <img :src="artiste.photo" alt="Photo de l'artiste" class="w-96 h-full object-cover rounded mb-2" />
-    </div>
+    <ArtisteCard v-for="artiste in artistesFiltres" :key="artiste.nom" :artiste="artiste" />
   </div>
   <p v-else>Aucun artiste pour le moment.</p>
 

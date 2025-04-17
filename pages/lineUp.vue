@@ -1,17 +1,26 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+const { data: artistes } = await useFetch<Artiste[]>('/api/artistes')
+
 interface Artiste {
   id: number
   nom: string
-  genreMusical: string
-  album: string
-  description: string | null
+  description: string
   photo: string
-  datePerformance?: string
+  datePerformance: string
+  albums?: Album[]
+  couleur: string
 }
 
-const { data: artistes } = await useFetch<Artiste[]>('/api/artistes')
+interface Album {
+  id: number
+  titre: string
+  dateSortie: string
+  photo: string
+}
+
+
 
 const artistesVendredi = computed(() => {
   return (artistes.value || []).filter(

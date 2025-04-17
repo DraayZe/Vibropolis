@@ -5,6 +5,7 @@ const nom = ref('')
 const description = ref('')
 const datePerformance = ref('')
 const file = ref(null)
+const couleur = ref('')
 
 const handleFile = (e) => {
   file.value = e.target.files[0]
@@ -15,6 +16,7 @@ const resetFields = () => {
   description.value = ''
   datePerformance.value = ''
   file.value = null
+  couleur.value = ''
   const fileInput = document.getElementById('fileInput')
   if (fileInput) fileInput.value = ''
 }
@@ -25,6 +27,7 @@ const ajouterArtiste = async () => {
   formData.append('description', description.value)
   formData.append('datePerformance', datePerformance.value)
   formData.append('photo', file.value)
+  formData.append('couleur', couleur.value)
 
   await fetch('/api/artistes/ajouter', {
     method: 'POST',
@@ -71,6 +74,13 @@ const ajouterArtiste = async () => {
         class="text-white"
     />
 
+    <input
+        type="text"
+        v-model="couleur"
+        placeholder="Couleur"
+        required
+        class="p-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+    />
     <button
         type="submit"
         class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-md transition duration-300"
