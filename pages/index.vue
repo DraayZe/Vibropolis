@@ -66,7 +66,7 @@ const artistesFiltres = computed(() => {
     </div>
   </div>
 
-  <div v-if="artistesFiltres && artistesFiltres.length" class="flex justify-evenly my-12">
+  <div v-if="artistesFiltres && artistesFiltres.length" class="flex justify-evenly my-12 ">
     <ArtisteCard v-for="artiste in artistesFiltres" :key="artiste.nom" :artiste="artiste" />
   </div>
   <p v-else>Aucun artiste pour le moment.</p>
@@ -76,7 +76,7 @@ const artistesFiltres = computed(() => {
     <div class="flex justify-center mt-24 gap-40">
       <div class="text-white text-4xl font-Bevellier border-white border-2 rounded-full p-6 px-12 hover:cursor-pointer hover:bg-white hover:border-2 hover:border-[#1E1E1E]
       hover:text-[#1E1E1E]">Billeterie</div>
-      <div class="text-[#1E1E1E] text-4xl font-Bevellier bg-white rounded-full p-6 px-12 hover:cursor-pointer hover:bg-[#1E1E1E] hover:border-2 hover:border-white
+      <div class="text-[#1E1E1E] text-4xl font-Bevellier bg-white border-2 border-white rounded-full p-6 px-12 hover:cursor-pointer hover:bg-[#1E1E1E] hover:border-2 hover:border-white
       hover:text-white">Pass culture</div>
     </div>
   </div>

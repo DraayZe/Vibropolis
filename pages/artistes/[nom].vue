@@ -34,7 +34,7 @@ if (artiste.value?.albums) {
 <template>
   <div v-if="artiste" class="bg-[#1E1E1E] min-h-screen p-10 text-white">
     <div class="flex items-start ">
-      <img :src="artiste.photo" alt="Artiste" class="w-1/4 rounded mb-6 object-cover z-10 outline-card "/>
+      <img :src="artiste.photo" alt="Artiste" class="w-1/5 rounded mb-6 object-cover outline-card "/>
       <div class="flex flex-col justify-center items-center flex-1">
         <h2 class="text-8xl font-Tanker mb-4" :style="{ color: artiste.couleur || '#FFFFFF' }" >{{ artiste.nom }}</h2>
         <p>{{ artiste.description }}</p>
@@ -44,7 +44,7 @@ if (artiste.value?.albums) {
     <div v-if="artiste.albums && artiste.albums.length">
       <Carousel class="w-full" :opts="{ align: 'start' }">
         <CarouselContent class="-ml-2">
-          <CarouselItem v-for="album in artiste.albums" :key="album.id" class="pl-2 md:basis-1/2 lg:basis-1/3">
+          <CarouselItem v-for="album in artiste.albums" :key="album.id" class="pl-2 md:basis-1/2 lg:basis-1/2">
             <AlbumCard :album="album" />
           </CarouselItem>
         </CarouselContent>

@@ -21,9 +21,9 @@
       id           Int           @id @default(autoincrement())
       nom          String
       prix         Float
-      description  String
-      duree        Int           // en jours
-      photo        String        // URL ou chemin de l'image
+      duree        Int
+      photo        String?
+      dates        String?
       achats       AchatPass[]   // Relation avec les utilisateurs
     }
 
@@ -54,3 +54,4 @@
       artisteId  Int
       photo      String?
     }
+

@@ -45,10 +45,15 @@ main, body {
             1px 1px 0 #fff;
 }
 
+
 .outline-card {
     color: white;
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
 
+.outline-card-black {
+    color: black;
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
 
