@@ -20,7 +20,7 @@ interface Album {
 
 const { data: artistes } = await useFetch<Artiste[]>('/api/artistes')
 
-const idsAffiches = [4, 5, 8]
+const idsAffiches = [1, 11, 20]
 
 // Filtre les artistes en fonction des IDs puis les trie pour que l'id 5 soit en premier
 const artistesFiltres = computed(() => {
@@ -72,11 +72,11 @@ const artistesFiltres = computed(() => {
   <p v-else>Aucun artiste pour le moment.</p>
 
   <div class="bg-[#1E1E1E] p-28">
-    <h2 class="text-white text-center text-7xl font-BevellierBlack">Achetez vos billets</h2>
+    <h2 class="text-white text-center text-7xl font-BevellierBlack">ACHETEZ VOS BILLETS</h2>
     <div class="flex justify-center mt-24 gap-40">
-      <div class="text-white text-4xl font-Bevellier border-white border-2 rounded-full p-6 px-12 hover:cursor-pointer hover:bg-white hover:border-2 hover:border-[#1E1E1E]
+      <div class="text-white text-2xl font-Bevellier border-white border-2 rounded-full p-6 px-12 hover:cursor-pointer hover:bg-white hover:border-2 hover:border-[#1E1E1E]
       hover:text-[#1E1E1E]">Billeterie</div>
-      <div class="text-[#1E1E1E] text-4xl font-Bevellier bg-white border-2 border-white rounded-full p-6 px-12 hover:cursor-pointer hover:bg-[#1E1E1E] hover:border-2 hover:border-white
+      <div class="text-[#1E1E1E] text-2xl font-Bevellier bg-white border-2 border-white rounded-full p-6 px-12 hover:cursor-pointer hover:bg-[#1E1E1E] hover:border-2 hover:border-white
       hover:text-white">Pass culture</div>
     </div>
   </div>

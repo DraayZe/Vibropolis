@@ -6,6 +6,7 @@ const description = ref('')
 const datePerformance = ref('')
 const file = ref(null)
 const couleur = ref('')
+const message = ref('') // 🆕 message de confirmation
 
 const handleFile = (e) => {
   file.value = e.target.files[0]
@@ -29,14 +30,25 @@ const ajouterArtiste = async () => {
   formData.append('photo', file.value)
   formData.append('couleur', couleur.value)
 
-  await fetch('/api/artistes/ajouter', {
+  const response = await fetch('/api/artistes/ajouter', {
     method: 'POST',
     body: formData
   })
 
-  resetFields()
+  if (response.ok) {
+    message.value = "L'artiste a bien été ajouté ✅"
+    resetFields()
+
+    // Efface le message après 3 secondes (optionnel)
+    setTimeout(() => {
+      message.value = ''
+    }, 3000)
+  } else {
+    message.value = "Une erreur s'est produite ❌"
+  }
 }
 </script>
+
 
 <template>
   <form
@@ -88,6 +100,10 @@ const ajouterArtiste = async () => {
       Ajouter l'artiste
     </button>
   </form>
+  <p v-if="message" class="text-center text-white bg-green-600 p-3 mt-6 rounded-md max-w-xl mx-auto">
+    {{ message }}
+  </p>
+
 </template>
 
 

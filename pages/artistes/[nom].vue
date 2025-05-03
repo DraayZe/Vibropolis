@@ -36,7 +36,7 @@ if (artiste.value?.albums) {
     <div class="flex items-start ">
       <img :src="artiste.photo" alt="Artiste" class="w-1/5 rounded mb-6 object-cover outline-card "/>
       <div class="flex flex-col justify-center items-center flex-1">
-        <h2 class="text-8xl font-Tanker mb-4" :style="{ color: artiste.couleur || '#FFFFFF' }" >{{ artiste.nom }}</h2>
+        <h2 class="text-8xl font-Tanker mb-4" :style="{ color: '#' + (artiste.couleur || '#FFFFFF') }" >{{ artiste.nom }}</h2>
         <p>{{ artiste.description }}</p>
       </div>
 

@@ -7,14 +7,14 @@
     <div class="w-3/4 border-r-2 border-[#1E1E1E] ">
       <h3 class="text-center font-Bevellier text-[#1E1E1E] text-xl mt-4">Nos partenaires</h3>
       <div class="flex justify-around items-center ">
-        <img src="/public/logo-kappa.png" alt="Logo de Kappa" class="w-32 h-32">
-        <img src="/public/logo-estac.png" alt="Logo de l'Estac" class="w-48 h-auto">
-        <img src="/public/logo-redbull.png" alt="Logo de Redbull" class="w-44 h-auto">
+        <img src="/public/logo-kappa.png" alt="Logo de Kappa" class="w-24 h-24">
+        <img src="/public/logo-estac.png" alt="Logo de l'Estac" class="w-32 h-auto">
+        <img src="/public/logo-redbull.png" alt="Logo de Redbull" class="w-32 h-auto">
       </div>
     </div>
 
     <div class="w-1/4 flex justify-center">
-      <img src="/public/logo-festival.png" alt="Logo de Vibropolis" class="w-72">
+      <img src="/public/logo-festival.png" alt="Logo de Vibropolis" class="w-60">
     </div>
   </div>
   <div>
