@@ -40,10 +40,14 @@
       id               Int      @id @default(autoincrement())
       nom              String
       albums           Album[]  // Relation: un artiste peut avoir plusieurs albums
-      description      String
+      description      String   @db.VarChar(500)
       photo            String
       datePerformance  DateTime
       couleur          String?
+      instagram        String?
+      youtube          String?
+      spotify          String?
+      tiktok           String?
     }
 
     model Album {
