@@ -6,7 +6,8 @@ defineProps<{
     dateSortie: string
   }
 }>()
-</script>
+
+</script>x
 
 <template>
   <div class="relative w-52 ">

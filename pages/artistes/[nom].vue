@@ -37,14 +37,15 @@ if (artiste.value?.albums) {
       <img :src="artiste.photo" alt="Artiste" class="w-1/5 rounded mb-6 object-cover outline-card "/>
       <div class="flex flex-col justify-center items-center flex-1">
         <h2 class="text-8xl font-Tanker mb-4" :style="{ color: '#' + (artiste.couleur || '#FFFFFF') }" >{{ artiste.nom }}</h2>
-        <p>{{ artiste.description }}</p>
+        <p class="text-lg font-Bevellier ml-10">{{ artiste.description }}</p>
       </div>
 
     </div>
+    <h2 class="text-2xl font-BevellierBlack  mb-4" >Albums</h2>
     <div v-if="artiste.albums && artiste.albums.length">
       <Carousel class="w-full" :opts="{ align: 'start' }">
         <CarouselContent class="-ml-2">
-          <CarouselItem v-for="album in artiste.albums" :key="album.id" class="pl-2 md:basis-1/2 lg:basis-1/2">
+          <CarouselItem v-for="album in artiste.albums" :key="album.id" class="pl-2 md:basis-3/4 lg:basis-1/4">
             <AlbumCard :album="album" />
           </CarouselItem>
         </CarouselContent>
