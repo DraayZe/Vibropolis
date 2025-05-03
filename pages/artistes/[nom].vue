@@ -21,6 +21,10 @@ interface Artiste {
   datePerformance: string
   albums?: Album[]
   couleur: string
+  instagram? : string
+  youtube? : string
+  spotify? : string
+  tiktok? : string
 }
 
 const { data: artiste } = await useFetch<Artiste>(`/api/artistes/${route.params.nom}`)
@@ -37,10 +41,24 @@ if (artiste.value?.albums) {
       <img :src="artiste.photo" alt="Artiste" class="w-1/5 rounded mb-6 object-cover outline-card "/>
       <div class="flex flex-col justify-center items-center flex-1">
         <h2 class="text-8xl font-Tanker mb-4" :style="{ color: '#' + (artiste.couleur || '#FFFFFF') }" >{{ artiste.nom }}</h2>
-        <p class="text-lg font-Bevellier ml-10">{{ artiste.description }}</p>
+        <p class="text-lg font-Bevellier ml-20 mt-4">{{ artiste.description }}</p>
+        <div class="flex gap-10 items-center mt-8">
+          <a v-if="artiste.instagram" :href="artiste.instagram" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/instagram.png" alt="Instagram" class="w-8 h-8" />
+          </a>
+          <a v-if="artiste.youtube" :href="artiste.youtube" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/youtube.png" alt="YouTube" class="w-8 h-auto" />
+          </a>
+          <a v-if="artiste.spotify" :href="artiste.spotify" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/spotify.png" alt="Spotify" class="w-8 h-8" />
+          </a>
+          <a v-if="artiste.tiktok" :href="artiste.tiktok" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/tiktok.png" alt="TikTok" class="w-8 h-8" />
+          </a>
+        </div>
       </div>
-
     </div>
+
     <h2 class="text-2xl font-BevellierBlack  mb-4" >Albums</h2>
     <div v-if="artiste.albums && artiste.albums.length">
       <Carousel class="w-full" :opts="{ align: 'start' }">
