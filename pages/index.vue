@@ -54,7 +54,7 @@ const artistesFiltres = computed(() => {
     </div>
 
     <div class="absolute bottom-0 right-0 flex items-center p-4">
-      <img src="/copyright.png" alt="Logo de Vibropolis" class="w-10">
+      <img src="/copyright.png" alt="Copyright" class="w-10">
       <p class="text-white font-Bevellier text-lg">2025 Vibropolis</p>
     </div>
   </div>

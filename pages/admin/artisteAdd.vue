@@ -6,7 +6,7 @@ const description = ref('')
 const datePerformance = ref('')
 const file = ref(null)
 const couleur = ref('')
-const message = ref('') // 🆕 message de confirmation
+const message = ref('')
 
 const handleFile = (e) => {
   file.value = e.target.files[0]
@@ -51,60 +51,89 @@ const ajouterArtiste = async () => {
 
 
 <template>
-  <form
-      @submit.prevent="ajouterArtiste"
-      enctype="multipart/form-data"
-      class="flex flex-col mt-8 gap-4 bg-[#1e1e1e] p-8 rounded-xl max-w-xl mx-auto shadow-lg"
-  >
-    <input
-        type="text"
-        v-model="nom"
-        placeholder="Nom"
-        required
-        class="p-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-    />
+  <div class="bg-[#1E1E1E] p-10">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-6 text-center">
+        Interface Administrateur – Ajouter un artiste
+      </h2>
 
-    <textarea
-        v-model="description"
-        placeholder="Description"
-        class="p-3 rounded-md bg-gray-800 text-white placeholder-gray-400 resize-y min-h-[100px] focus:outline-none focus:ring-2 focus:ring-purple-500"
-    ></textarea>
+      <form
+          @submit.prevent="ajouterArtiste"
+          enctype="multipart/form-data"
+          class="flex flex-col gap-4 bg-white p-8 rounded-xl shadow-lg"
+      >
+        <div>
+          <label for="nom" class="block text-gray-700 mb-1">Nom</label>
+          <input
+              id="nom"
+              type="text"
+              v-model="nom"
+              placeholder="Nom"
+              required
+              class="w-full p-3 rounded-md border border-gray-300 text-[#1E1E1E] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+        </div>
 
-    <input
-        type="date"
-        v-model="datePerformance"
-        required
-        class="p-3 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-    />
+        <div>
+          <label for="description" class="block text-gray-700 mb-1">Description</label>
+          <textarea
+              id="description"
+              v-model="description"
+              placeholder="Description"
+              class="w-full p-3 rounded-md border border-gray-300 text-[#1E1E1E] placeholder-gray-400 resize-y min-h-[100px] focus:outline-none focus:ring-2 focus:ring-purple-500"
+          ></textarea>
+        </div>
 
-    <input
-        id="fileInput"
-        type="file"
-        @change="handleFile"
-        accept="image/*"
-        required
-        class="text-white"
-    />
+        <div>
+          <label for="datePerformance" class="block text-gray-700 mb-1">Date de performance</label>
+          <input
+              id="datePerformance"
+              type="date"
+              v-model="datePerformance"
+              required
+              class="w-full p-3 rounded-md border border-gray-300 text-[#1E1E1E] focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+        </div>
 
-    <input
-        type="text"
-        v-model="couleur"
-        placeholder="Couleur"
-        required
-        class="p-3 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-    />
-    <button
-        type="submit"
-        class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-md transition duration-300"
-    >
-      Ajouter l'artiste
-    </button>
-  </form>
-  <p v-if="message" class="text-center text-white bg-green-600 p-3 mt-6 rounded-md max-w-xl mx-auto">
-    {{ message }}
-  </p>
+        <div>
+          <label for="fileInput" class="block text-gray-700 mb-1">Photo</label>
+          <input
+              id="fileInput"
+              type="file"
+              @change="handleFile"
+              accept="image/*"
+              required
+              class="w-full p-3 rounded-md border border-gray-300 text-[#1E1E1E] file:text-black file:rounded-md file:px-4 file:py-2 file:border-0"
+          />
+        </div>
 
+        <div>
+          <label for="couleur" class="block text-gray-700 mb-1">Couleur</label>
+          <input
+              id="couleur"
+              type="text"
+              v-model="couleur"
+              placeholder="Couleur"
+              required
+              class="w-full p-3 rounded-md border border-gray-300 text-[#1E1E1E] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+        </div>
+
+        <button
+            type="submit"
+            class="w-full py-3 rounded-full bg-purple-600 hover:bg-purple-700 transition text-white font-medium"
+        >
+          Ajouter l'artiste
+        </button>
+      </form>
+
+      <p v-if="message" class="text-center text-white bg-green-600 p-3 mt-6 rounded-md">
+        {{ message }}
+      </p>
+    </div>
+  </div>
 </template>
+
 
 
 <style scoped>
