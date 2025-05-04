@@ -11,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="relative w-52 flex">
+  <div class="relative w-96 flex">
     <img :src="pass.photo" alt="Pass" class="w-full h-auto object-cover rounded-lg">
   </div>
 </template>

@@ -50,20 +50,15 @@ const isHome = computed(() => route.path === '/')
       <template v-if="userStore.isAuthenticated">
         <NuxtLink
             to="/profile"
-            :class="[
-            'text-white text-2xl font-BevellierBlack tracking-wide hover-outline-white',
-            route.path === '/profile' ? 'outline-white' : ''
-          ]"
-        >MON ESPACE</NuxtLink>
+        >
+          <img src="/utilisateur-connecté.png" alt="Utilisateur" class="w-10"></NuxtLink>
       </template>
       <template v-else>
         <NuxtLink
             to="/login"
-            :class="[
-            'text-white text-2xl font-BevellierBlack tracking-wide hover-outline-white',
-            route.path === '/login' ? 'outline-white' : ''
-          ]"
-        >Se connecter</NuxtLink>
+        >
+          <img src="/utilisateur.png" alt="Utilisateur" class="w-10">
+        </NuxtLink>
       </template>
     </div>
   </nav>
