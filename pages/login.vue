@@ -12,7 +12,9 @@ definePageMeta({
   <div class="flex">
     <div class="relative h-screen bg-no-repeat bg-cover w-1/3 flex flex-col justify-between p-6" style="background-image: url('/festival-login.png')">
       <div>
+        <NuxtLink to="/">
         <img src="/logo-festival.png" alt="Logo de Vibropolis" class="w-60" />
+        </NuxtLink>
       </div>
       <div class="text-center mb-10">
         <h1 class="text-2xl font-bold text-white mb-4">Bienvenue sur notre plateforme</h1>

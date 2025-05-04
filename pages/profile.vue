@@ -28,7 +28,6 @@ onMounted(async () => {
 
 </script>
 
-
 <template>
   <div v-if="user">
     <h1>Bienvenue {{ user.nom }}</h1>
@@ -54,5 +53,3 @@ onMounted(async () => {
     </ul>
   </div>
 </template>
-
-

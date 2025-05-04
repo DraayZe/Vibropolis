@@ -18,7 +18,7 @@ const accordionItems = [
 <template>
   <Accordion type="single"  collapsible :default-value="defaultValue" class="mx-80 pb-20">
     <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
-      <AccordionTrigger class="text-white text-2xl pt-10 font-Bevellier">{{ item.title }}</AccordionTrigger>
+      <AccordionTrigger class="text-white text-2xl pt-8 font-Bevellier">{{ item.title }}</AccordionTrigger>
       <AccordionContent class="text-gray-400 font-Bevellier ">
         {{ item.content }}
       </AccordionContent>
