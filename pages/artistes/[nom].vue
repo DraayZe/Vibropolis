@@ -61,7 +61,6 @@ const hoveredIcon = ref<string | null>(null)
             />
           </a>
 
-          <!-- YouTube -->
           <a v-if="artiste.youtube" :href="artiste.youtube" target="_blank" rel="noopener noreferrer">
             <img
                 src="/icons/youtube.png"
@@ -75,7 +74,6 @@ const hoveredIcon = ref<string | null>(null)
             />
           </a>
 
-          <!-- Spotify -->
           <a v-if="artiste.spotify" :href="artiste.spotify" target="_blank" rel="noopener noreferrer">
             <img
                 src="/icons/spotify.png"
@@ -89,7 +87,6 @@ const hoveredIcon = ref<string | null>(null)
             />
           </a>
 
-          <!-- TikTok -->
           <a v-if="artiste.tiktok" :href="artiste.tiktok" target="_blank" rel="noopener noreferrer">
             <img
                 src="/icons/tiktok.png"
@@ -110,7 +107,11 @@ const hoveredIcon = ref<string | null>(null)
     <div v-if="artiste.albums && artiste.albums.length">
       <Carousel class="w-full" :opts="{ align: 'start' }">
         <CarouselContent class="-ml-2">
-          <CarouselItem v-for="album in artiste.albums" :key="album.id" class="pl-2 md:basis-3/4 lg:basis-1/4">
+          <CarouselItem
+              v-for="album in artiste.albums"
+              :key="album.id"
+              class="pl-2 md:basis-3/4 lg:basis-1/4"
+          >
             <AlbumCard :album="album" :couleur="artiste.couleur" />
           </CarouselItem>
         </CarouselContent>
@@ -118,6 +119,9 @@ const hoveredIcon = ref<string | null>(null)
         <CarouselNext class="mr-10" />
       </Carousel>
     </div>
+
+    <p v-else class="text-white font-Bevellier  mt-6">{{ artiste.nom }} n'a encore sorti aucun album.</p>
+
   </div>
 
   <div v-else class="text-white p-10">

@@ -44,9 +44,9 @@ const artistesDimanche = computed(() => {
 <template>
   <div class="flex flex-col items-center justify-center bg-[#1E1E1E] pb-10">
     <div class="flex">
-      <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#120AF1]">13</p>
-      <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#9747FF]">14</p>
-      <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#EA0000]">15</p>
+      <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#120AF1] cursor-pointer">13</p>
+      <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#9747FF] cursor-pointer">14</p>
+      <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#EA0000] cursor-pointer">15</p>
     </div>
     <div>
       <p class="text-[#1E1E1E] text-5xl font-BevellierBlack bg-white rounded-full px-6 py-2">JUIN 2025</p>

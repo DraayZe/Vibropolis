@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import Billeterie from "~/pages/billeterie.vue";
 
 interface Artiste {
   id: number
@@ -61,9 +62,11 @@ const artistesFiltres = computed(() => {
 
   <div class="flex justify-between items-center mx-48 my-12">
     <AnimatedHeading text="LINE-UP" className="text-[#1E1E1E] text-7xl font-BevellierBlack"/>
+    <NuxtLink to="/lineUp">
     <div class="text-white bg-[#1E1E1E] p-4 px-12 text-2xl font-Bevellier rounded-full hover:cursor-pointer hover:bg-white hover:border-2 hover:border-[#1E1E1E] hover:text-[#1E1E1E]">
       Découvrez en plus
     </div>
+    </NuxtLink>
   </div>
 
   <div v-if="artistesFiltres && artistesFiltres.length" class="flex justify-evenly my-12 ">
@@ -74,10 +77,13 @@ const artistesFiltres = computed(() => {
   <div class="bg-[#1E1E1E] p-28">
     <AnimatedHeading text="ACHETEZ VOS BILLETS" className="text-white text-center text-7xl font-BevellierBlack"/>
     <div class="flex justify-center mt-24 gap-40">
+      <NuxtLink  to="/billeterie">
       <div class="text-white text-2xl font-Bevellier border-white border-2 rounded-full p-6 px-12 hover:cursor-pointer hover:bg-white hover:border-2 hover:border-[#1E1E1E]
       hover:text-[#1E1E1E]">Billeterie</div>
-      <div class="text-[#1E1E1E] text-2xl font-Bevellier bg-white border-2 border-white rounded-full p-6 px-12 hover:cursor-pointer hover:bg-[#1E1E1E] hover:border-2 hover:border-white
-      hover:text-white">Pass culture</div>
+      </NuxtLink>
+        <a href="https://pass.culture.fr" target="_blank" rel="noopener noreferrer" class="text-[#1E1E1E] text-2xl font-Bevellier bg-white border-2 border-white rounded-full p-6 px-12 hover:cursor-pointer hover:bg-[#1E1E1E] hover:border-2 hover:border-white hover:text-white">
+        Pass culture
+        </a>
     </div>
   </div>
 </template>

@@ -21,7 +21,7 @@ onMounted(fetchPasses)
   />
 </div>
   <div class="bg-[#1E1E1E] ">
-    <h2 class="text-white text-center text-7xl font-BevellierBlack py-20">QUESTIONS RÉCURRENTES</h2>
+    <AnimatedHeading text="QUESTIONS RÉCURRENTES" className="text-white text-center text-7xl font-BevellierBlack py-20"/>
     <Accordeon />
   </div>
 </template>
