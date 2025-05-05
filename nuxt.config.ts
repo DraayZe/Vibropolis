@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-  components : true,
+  components: true,
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -11,4 +11,10 @@ export default defineNuxtConfig({
     },
   },
   plugins: ['~/plugins/pinia.js'],
+  modules: [
+    '@vueuse/nuxt'
+  ],
+  build: {
+    transpile: ['@motionone/vue']
+  },
 })

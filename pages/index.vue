@@ -60,7 +60,7 @@ const artistesFiltres = computed(() => {
   </div>
 
   <div class="flex justify-between items-center mx-48 my-12">
-    <h1 class="text-[#1E1E1E] text-7xl font-BevellierBlack">LINE-UP</h1>
+    <AnimatedHeading text="LINE-UP" className="text-[#1E1E1E] text-7xl font-BevellierBlack"/>
     <div class="text-white bg-[#1E1E1E] p-4 px-12 text-2xl font-Bevellier rounded-full hover:cursor-pointer hover:bg-white hover:border-2 hover:border-[#1E1E1E] hover:text-[#1E1E1E]">
       Découvrez en plus
     </div>
@@ -72,7 +72,7 @@ const artistesFiltres = computed(() => {
   <p v-else>Aucun artiste pour le moment.</p>
 
   <div class="bg-[#1E1E1E] p-28">
-    <h2 class="text-white text-center text-7xl font-BevellierBlack">ACHETEZ VOS BILLETS</h2>
+    <AnimatedHeading text="ACHETEZ VOS BILLETS" className="text-white text-center text-7xl font-BevellierBlack"/>
     <div class="flex justify-center mt-24 gap-40">
       <div class="text-white text-2xl font-Bevellier border-white border-2 rounded-full p-6 px-12 hover:cursor-pointer hover:bg-white hover:border-2 hover:border-[#1E1E1E]
       hover:text-[#1E1E1E]">Billeterie</div>

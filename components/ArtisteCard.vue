@@ -21,7 +21,7 @@ defineProps<{
 <style scoped>
 @keyframes unblur {
   from {
-    filter: blur(6px);
+    filter: blur(10px);
     opacity: 0;
   }
   to {
@@ -31,6 +31,6 @@ defineProps<{
 }
 
 .animate-unblur {
-  animation: unblur 0.8s ease-out forwards;
+  animation: unblur 0.9s ease-out forwards;
 }
 </style>
