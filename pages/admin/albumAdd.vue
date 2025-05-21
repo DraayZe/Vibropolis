@@ -59,11 +59,6 @@ onMounted(async () => {
     message.value = "Impossible de charger les artistes ❌"
   }
 })
-
-definePageMeta({
-  middleware: ['admin']
-})
-
 </script>
 
 
