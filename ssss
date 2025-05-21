@@ -1,0 +1,40 @@
+* [33m7742c8c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;32mbackup-main[m[33m)[m test
+* [33m0660fe8[m fix details + page infos
+* [33m50076f3[m ajout motion
+* [33mba08b66[m achat de pass
+* [33m8907109[m some updates details
+* [33mdfc51dc[m ajout des pass et logo utilisateur
+* [33m93dfc22[m page de connexion
+* [33m354950c[m update bdd and rajout de quelques albums
+* [33m3a38c66[m fix and update bdd
+* [33m9e75e4e[m albums added
+* [33mcdce2e4[m fix details and re-upload artists
+* [33m08263bc[m Ajout PassCard
+* [33m38ff1a0[m accordeon
+* [33mef3c68d[m page billeterie et changement bdd
+* [33m490bebb[m commit
+* [33me0f01b7[m carrousel albums
+* [33m026f736[m ajout carrousel des albums
+* [33m3c32fb0[m ajout shadcn
+* [33m49e004e[m ajout ArtisteCard et update back
+* [33mb25f222[m commit bdd
+* [33m4459b3b[m page line-up et changement bdd
+* [33mf03b88b[m fin footer
+* [33mdfd559f[m page d'accueil et début footer
+* [33m398f6df[m ajout des artistes
+* [33ma21f4ee[m header
+* [33mdc3277e[m ajustement header
+* [33m504cf7b[m init2
+* [33m2cb7ac9[m first commit
+* [33md424348[m init
+* [33mb4d9243[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Mise en place du système de favoris
+* [33m6abcc1e[m améliorations
+* [33m0da2749[m Les filtres
+* [33m1424407[m Filtrage des pokémons
+* [33m6c7b65d[m Rechercher des pokémons
+* [33me57f61b[m Page pokedex
+* [33m6c483c3[m grid card pokedemon
+* [33m5310115[m Changement page d'accueil et début pokédex
+* [33m3b48c64[m page d'accueil et début pokedex
+* [33m0e5b251[m Page d'accueil
+* [33ma5b4060[m Premier commit

@@ -17,7 +17,7 @@ definePageMeta({
         </NuxtLink>
       </div>
       <div class="text-center mb-10">
-        <h1 class="text-2xl font-bold text-white mb-4">Bienvenue sur notre plateformeee</h1>
+        <h1 class="text-2xl font-bold text-white mb-4">Bienvenue sur notre plateforme</h1>
         <p class="text-white">Connectez-vous ou créez un compte pour commencer.</p>
       </div>
     </div>
