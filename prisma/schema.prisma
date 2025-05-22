@@ -13,15 +13,11 @@
       prenom       String
       email        String        @unique
       motDePasse   String
-      role         Role          @default(USER)
+      role         String        @default("user")
       achats       AchatPass[]   // Relation avec les pass achetés
       createdAt    DateTime      @default(now())
     }
 
-    enum Role {
-      USER
-      ADMIN
-    }
 
     model Pass {
       id           Int           @id @default(autoincrement())
