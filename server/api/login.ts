@@ -23,7 +23,11 @@ export default defineEventHandler(async (event) => {
         throw createError({ statusCode: 401, statusMessage: 'Mot de passe incorrect' })
     }
 
-    const token = jwt.sign({ id: user.id, email: user.email }, secret, { expiresIn: '2h' })
+    const token = jwt.sign(
+        { id: user.id, email: user.email, isAdmin: user.isAdmin || false },
+        secret,
+        { expiresIn: '2h' }
+    )
 
     return {
         message: 'Connexion réussie',
@@ -31,7 +35,9 @@ export default defineEventHandler(async (event) => {
         user: {
             id: user.id,
             nom: user.nom,
-            email: user.email
+            email: user.email,
+            isAdmin: user.isAdmin
         }
     }
+
 })

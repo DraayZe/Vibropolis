@@ -47,6 +47,11 @@ const ajouterArtiste = async () => {
     message.value = "Une erreur s'est produite ❌"
   }
 }
+
+definePageMeta({
+  middleware: 'admin',
+})
+
 </script>
 
 

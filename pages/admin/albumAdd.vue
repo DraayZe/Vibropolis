@@ -61,7 +61,7 @@ onMounted(async () => {
 })
 
 definePageMeta({
-  middleware: ['admin']
+  middleware: 'admin',
 })
 
 </script>
