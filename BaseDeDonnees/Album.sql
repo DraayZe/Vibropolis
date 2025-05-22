@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : sam. 03 mai 2025 à 15:49
+-- Généré le : jeu. 22 mai 2025 à 09:19
 -- Version du serveur : 11.5.2-MariaDB-ubu2404
 -- Version de PHP : 8.2.8
 
@@ -86,8 +86,7 @@ INSERT INTO `Album` (`id`, `titre`, `dateSortie`, `artisteId`, `photo`) VALUES
 (44, 'Okou Gnakouri', '2016-11-11 00:00:00.000', 2, '/uploads/1746266197994-Okou Gnakouri.jpg'),
 (45, 'Dozo', '2017-11-03 00:00:00.000', 2, '/uploads/1746266228040-Dozo.jpg'),
 (46, 'Or Noir Part 3', '2019-01-25 00:00:00.000', 2, '/uploads/1746266266379-Or Noir Part 3.jpg'),
-(47, '2.7.0 : Château Noir', '2021-03-25 00:00:00.000', 2, '/uploads/1746266327611-2.7.0 Château Noir.jpg'),
-(48, 'RIYAD SADO', '2022-03-04 00:00:00.000', 1, '/uploads/1746266364020-RIYAD SADIO.jpg'),
+(48, 'RIYAD SADIO', '2022-03-04 00:00:00.000', 1, '/uploads/1746266364020-RIYAD SADIO.jpg'),
 (49, 'TSAR NOIR', '2024-05-24 00:00:00.000', 16, '/uploads/1746269723239-TSAR NOIR.jpg'),
 (50, 'Nouvelle Ère', '2022-02-22 00:00:00.000', 16, '/uploads/1746269761699-Nouvelle Ère.jpg'),
 (51, 'Nibiru', '2019-05-03 00:00:00.000', 16, '/uploads/1746269826773-Nibiru.jpg'),
@@ -134,7 +133,14 @@ INSERT INTO `Album` (`id`, `titre`, `dateSortie`, `artisteId`, `photo`) VALUES
 (92, 'XEU', '2018-02-02 00:00:00.000', 19, '/uploads/1746272211950-XEU.jpg'),
 (93, 'NQNTMQMQMB', '2016-08-05 00:00:00.000', 19, '/uploads/1746272258945-NQNTMQMQMB.jpg'),
 (94, 'NQNT 2', '2015-06-29 00:00:00.000', 19, '/uploads/1746272293263-NQNT 2.jpg'),
-(95, 'NQNT', '2014-01-01 00:00:00.000', 19, '/uploads/1746272321022-NQNT.jpg');
+(95, 'NQNT', '2014-01-01 00:00:00.000', 19, '/uploads/1746272321022-NQNT.jpg'),
+(96, 'Z.E.R.O', '2025-01-11 00:00:00.000', 2, '/uploads/1746299015492-Z.E.R.O.jpg'),
+(97, 'PANDEMONIUM', '2025-03-28 00:00:00.000', 19, '/uploads/1746299074474-PANDEMONIUM.jpg'),
+(98, 'V', '2022-02-04 00:00:00.000', 19, '/uploads/1746299113598-V.jpg'),
+(99, 'Horizon vertical', '2020-12-18 00:00:00.000', 19, '/uploads/1746299165991-Horizon vertical.jpg'),
+(100, 'Echelon, Vol. 2', '2021-04-23 00:00:00.000', 19, '/uploads/1746299233622-Echelon, Vol. 2.jpg'),
+(101, 'Echelon, Vol. 1', '2020-11-27 00:00:00.000', 19, '/uploads/1746299269318-Echelon, Vol. 1.jpg'),
+(104, '2.7.0 : Château Noir', '2021-03-25 00:00:00.000', 2, '/uploads/1746390179278-2.7.0 Château Noir.jpg');
 
 --
 -- Index pour les tables déchargées
@@ -155,7 +161,7 @@ ALTER TABLE `Album`
 -- AUTO_INCREMENT pour la table `Album`
 --
 ALTER TABLE `Album`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- Contraintes pour les tables déchargées
