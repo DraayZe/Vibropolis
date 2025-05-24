@@ -6,10 +6,8 @@ const secret = 'vibropolis_secret'
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
 
-    // Hasher le mot de passe
     const hashedPassword = await hash(body.motDePasse, 10)
-
-    // Créer l'utilisateur en base
+    
     const user = await prisma.utilisateur.create({
         data: {
             nom: body.nom,
