@@ -22,7 +22,7 @@ definePageMeta({
       </div>
     </div>
 
-    <div class="flex flex-col items-center mt-40 mx-auto">
+    <div class="flex flex-col items-center mt-32 mx-auto">
       <h2 class="text-[#1E1E1E] text-2xl pb-2">Veuillez vous itentifiez</h2>
       <p class="text-[#1E1E1E] w-3/4 text-center pb-2">Vous inscrire vous permez de réservez vos billets et de profitez pleinement du site web ! </p>
       <Tabs default-value="account" class="w-3/4">
