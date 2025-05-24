@@ -1,9 +1,7 @@
-import { PrismaClient } from '@prisma/client'
+import prisma from "~/server/utils/prisma";
 import formidable from 'formidable'
 import { writeFile, readFile } from 'fs/promises'
 import { join } from 'path'
-
-const prisma = new PrismaClient()
 
 // Désactive le body parser par défaut de Nuxt pour les uploads
 export const config = {

@@ -1,9 +1,6 @@
-// server/api/login.ts
-import { PrismaClient } from '@prisma/client'
+import prisma from "~/server/utils/prisma";
 import { compare } from 'bcrypt'
 import jwt from 'jsonwebtoken'
-
-const prisma = new PrismaClient()
 const secret = 'vibropolis_secret'
 
 export default defineEventHandler(async (event) => {
