@@ -13,9 +13,9 @@ model Utilisateur {
   prenom     String
   email      String      @unique
   motDePasse String
-  isAdmin    Boolean     @default(false) //
-  achats     AchatPass[]
   createdAt  DateTime    @default(now())
+  isAdmin    Boolean     @default(false)
+  achats     AchatPass[]
 }
 
 model Pass {
@@ -25,37 +25,42 @@ model Pass {
   duree  Int
   photo  String?
   dates  String?
-  achats AchatPass[] // Relation avec les utilisateurs
+  achats AchatPass[]
 }
 
 model AchatPass {
   id            Int         @id @default(autoincrement())
-  utilisateur   Utilisateur @relation(fields: [utilisateurId], references: [id])
   utilisateurId Int
-  pass          Pass        @relation(fields: [passId], references: [id])
   passId        Int
   dateAchat     DateTime    @default(now())
+  pass          Pass        @relation(fields: [passId], references: [id])
+  utilisateur   Utilisateur @relation(fields: [utilisateurId], references: [id])
+
+  @@index([passId], map: "AchatPass_passId_fkey")
+  @@index([utilisateurId], map: "AchatPass_utilisateurId_fkey")
 }
 
 model Artiste {
   id              Int      @id @default(autoincrement())
   nom             String
-  albums          Album[] // Relation: un artiste peut avoir plusieurs albums
   description     String   @db.VarChar(900)
   photo           String
   datePerformance DateTime
   couleur         String?
   instagram       String?
-  youtube         String?
   spotify         String?
   tiktok          String?
+  youtube         String?
+  albums          Album[]
 }
 
 model Album {
   id         Int      @id @default(autoincrement())
   titre      String
   dateSortie DateTime
-  artiste    Artiste  @relation(fields: [artisteId], references: [id])
   artisteId  Int
   photo      String?
+  artiste    Artiste  @relation(fields: [artisteId], references: [id])
+
+  @@index([artisteId], map: "Album_artisteId_fkey")
 }

@@ -6,7 +6,7 @@ services:
       MYSQL_ROOT_PASSWORD: lenny
       MYSQL_DATABASE: vibropolis
     ports:
-      - "33066:3306"
+      - "3307:3306"
     volumes:
       - mariadb_data:/var/lib/mysql
       - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
@@ -18,7 +18,7 @@ services:
       PMA_HOST: db
       PMA_PASSWORD: lenny
     ports:
-      - "8282:80"
+      - "8383:80"
     depends_on:
       - db
 
