@@ -17,4 +17,12 @@ export default defineNuxtConfig({
   build: {
     transpile: ['@motionone/vue']
   },
+
+  // ✅ Ajout : configuration des variables d'environnement
+  runtimeConfig: {
+    // Accessible uniquement côté serveur
+    DATABASE_URL: process.env.DATABASE_URL,
+    JWT_SECRET: process.env.JWT_SECRET,
+
+  }
 })

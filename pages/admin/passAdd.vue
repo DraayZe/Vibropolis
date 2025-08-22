@@ -39,6 +39,11 @@ const ajouterPass = async () => {
   dates.value = []
   file.value = null
 }
+
+definePageMeta({
+  middleware: 'admin',
+})
+
 </script>
 
 <template>

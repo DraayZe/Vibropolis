@@ -39,21 +39,36 @@ const artistesDimanche = computed(() => {
       a => a.datePerformance && a.datePerformance.startsWith('2025-06-15')
   )
 })
+
+function scrollToSection(event: Event, id: string) {
+  event.preventDefault()
+  const el = document.getElementById(id)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
 </script>
 
 <template>
   <div class="flex flex-col items-center justify-center bg-[#1E1E1E] pb-10">
     <div class="flex">
-      <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#120AF1] cursor-pointer">13</p>
-      <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#9747FF] cursor-pointer">14</p>
-      <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#EA0000] cursor-pointer">15</p>
+      <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#120AF1] cursor-pointer">
+        <a href="#13" @click="(e) => scrollToSection(e, '13')">13</a>
+      </p>
+      <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#9747FF] cursor-pointer">
+        <a href="#14" @click="(e) => scrollToSection(e, '14')">14</a>
+      </p>
+      <p class="bg-[#1E1E1E] text-4xl font-BevellierBlack rounded-full m-2 p-6 text-white border-white border-2 hover:bg-[#EA0000] cursor-pointer">
+        <a href="#15" @click="(e) => scrollToSection(e, '15')">15</a>
+      </p>
     </div>
     <div>
       <p class="text-[#1E1E1E] text-5xl font-BevellierBlack bg-white rounded-full px-6 py-2">JUIN 2025</p>
     </div>
   </div>
 
-  <div class="flex justify-center gap-20 bg-[#1E1E1E]">
+  <div id="13" class="flex justify-center gap-20 bg-[#1E1E1E]">
     <AnimatedHeading text="VENDREDI" className="text-white font-BevellierBlack" style="font-size: clamp(20px, 10vw, 200px);"/>
     <AnimatedHeading text="13 JUIN" className="outline-white font-BevellierBlack" style="font-size: clamp(20px, 10vw, 200px);"/>
 
@@ -67,7 +82,7 @@ const artistesDimanche = computed(() => {
   </div>
 
 
-  <div class="flex justify-center gap-20 bg-[#1E1E1E]">
+  <div id="14" class="flex justify-center gap-20 bg-[#1E1E1E]">
     <AnimatedHeading text="SAMEDI" className="text-white font-BevellierBlack" style="font-size: clamp(20px, 10vw, 200px);"/>
     <AnimatedHeading text="14 JUIN" className="outline-white font-BevellierBlack" style="font-size: clamp(20px, 10vw, 200px);"/>
 
@@ -80,7 +95,7 @@ const artistesDimanche = computed(() => {
     <Bouton />
   </div>
 
-  <div class="flex justify-center gap-20 bg-[#1E1E1E]">
+  <div id="15" class="flex justify-center gap-20 bg-[#1E1E1E]">
     <AnimatedHeading text="DIMANCHE" className="text-white font-BevellierBlack" style="font-size: clamp(20px, 10vw, 200px);"/>
     <AnimatedHeading text="15 JUIN" className="outline-white font-BevellierBlack" style="font-size: clamp(20px, 10vw, 200px);"/>
   </div>

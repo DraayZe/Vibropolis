@@ -1,23 +1,30 @@
-// stores/user.ts
 import { defineStore } from 'pinia'
+import { jwtDecode } from 'jwt-decode'
 
 interface User {
-    user: any;
-    token: string | null;
+    id: number
+    email: string
+    isAdmin: boolean
+}
+
+interface State {
+    user: User | null
+    token: string | null
 }
 
 export const useUserStore = defineStore('user', {
-    state: (): User => ({
-        user: null,  // Informations de l'utilisateur
-        token: null, // Token JWT
+    state: (): State => ({
+        user: null,
+        token: null,
     }),
     getters: {
-        isAuthenticated: (state): boolean => !!state.token, // Vérifie si l'utilisateur est authentifié
+        isAuthenticated: (state) => !!state.token,
     },
     actions: {
-        setUser(data: { user: any; token: string }) {
+        setUser(data: { user: User; token: string }) {
             this.user = data.user
             this.token = data.token
+            localStorage.setItem('token', data.token)
         },
         logout() {
             this.user = null
@@ -25,10 +32,22 @@ export const useUserStore = defineStore('user', {
             localStorage.removeItem('token')
         },
         loadFromLocalStorage() {
-            const token = localStorage.getItem('token')
-            if (token) {
-                this.token = token
+            if (process.client) {
+                const token = localStorage.getItem('token')
+                if (token) {
+                    try {
+                        const decoded: any = jwtDecode(token)
+                        this.user = {
+                            id: decoded.id,
+                            email: decoded.email,
+                            isAdmin: decoded.isAdmin || false,
+                        }
+                        this.token = token
+                    } catch {
+                        this.logout()
+                    }
+                }
             }
-        }
-    }
+        },
+    },
 })

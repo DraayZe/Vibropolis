@@ -39,6 +39,8 @@ onMounted(() => {
   userStore.loadFromLocalStorage()
   fetchAchats()
 })
+
+console.log('user', user.value)
 </script>
 
 
